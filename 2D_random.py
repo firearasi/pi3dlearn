@@ -2,7 +2,7 @@ import demo
 import pi3d,math,numpy as np
 import numpy.random
 
-display=pi3d.Display.create(x=50,y=350,w=800,h=600)
+display=pi3d.Display.create(x=50,y=350,w=1600,h=1200)
 CAMERA= pi3d.Camera(is_3d=False)
 
 matsh=pi3d.Shader('mat_flat')
@@ -44,11 +44,11 @@ def print_matrices():
       print(out_str)
 
 keys=pi3d.Keyboard()
-xaxis=pi3d.Lines(camera=CAMERA,vertices=[[-250,0,0],[250,0,0]],
+xaxis=pi3d.Lines(camera=CAMERA,vertices=[[-800,0,0],[800,0,0]],
           z=1.0,material=(0.0,1.0,1.0),line_width=2)
 xaxis.set_shader(matsh)
 
-yaxis=pi3d.Lines(camera=CAMERA,vertices=[[0,-250,0],[0,250,0]],
+yaxis=pi3d.Lines(camera=CAMERA,vertices=[[0,-600,0],[0,600,0]],
           z=1.0,material=(0.0,1.0,1.0),line_width=2)
 yaxis.set_shader(matsh)
 
@@ -81,9 +81,9 @@ while display.loop_running():
   elif k=='d':
     t_mat[0][2]+=5.0
   elif k=='c':
-    s_mat[0][0]=s_mat[1][1]=s_mat[0][0]*1.05
+    s_mat[0][0]=s_mat[1][1]=s_mat[0][0]*1.02
   elif k=='v':
-    s_mat[0][0]=s_mat[1][1]=s_mat[0][0]/1.05
+    s_mat[0][0]=s_mat[1][1]=s_mat[0][0]/1.02
   elif k=='z':
     do_rotation=1
     angle+=2.5*np.pi/180
