@@ -2,8 +2,7 @@ import demo
 import pi3d,math,numpy as np
 import numpy.random
 
-display=pi3d.Display.create(x=50,y=350,w=800,h=600,tk=True,
-  window_title="AAA")
+display=pi3d.Display.create(x=50,y=350,w=800,h=600)
 CAMERA= pi3d.Camera(is_3d=False)
 
 matsh=pi3d.Shader('mat_flat')
